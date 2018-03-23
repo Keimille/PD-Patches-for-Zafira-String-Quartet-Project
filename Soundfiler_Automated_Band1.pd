@@ -1,4 +1,4 @@
-#N canvas 100 50 1440 788 10;
+#N canvas 61 32 1440 788 10;
 #X obj 72 76 soundfiler;
 #X obj 72 98 table mySamples;
 #X obj 73 199 tabplay~ mySamples;
@@ -74,7 +74,7 @@ of providing a steady pulse it can provide an irregular beat;
 #X obj -380 506 *~;
 #X obj -341 506 *~;
 #X obj -323 320 hsl 60 40 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2800 1;
+-1 -1 2600 1;
 #X msg -276 440 \$1 50;
 #X obj -276 462 line;
 #X obj -380 528 freeverb~;
@@ -82,11 +82,11 @@ of providing a steady pulse it can provide an irregular beat;
 #X msg -195 482 dry \$1;
 #X msg -194 545 roomsize \$1;
 #X obj -74 415 hsl 60 40 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2500 1;
+-1 -1 2900 1;
 #X obj -74 505 hsl 60 40 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2600 1;
+-1 -1 2900 1;
 #X obj -74 460 hsl 60 40 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2400 1;
+-1 -1 2800 1;
 #X obj -300 618 delwrite~ delayLeft 4000;
 #X obj -300 640 delwrite~ delayRight 4000;
 #X obj -41 618 delread~ delayLeft 1000;
@@ -96,6 +96,16 @@ of providing a steady pulse it can provide an irregular beat;
 #X floatatom 48 491 5 0 0 0 - - -;
 #X floatatom 53 530 5 0 0 0 - - -;
 #X floatatom 57 573 5 0 0 0 - - -;
+#X obj 557 501 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 557 533 metro 2000;
+#X obj 557 560 f 0;
+#X obj 588 560 == 0;
+#X obj 557 589 * 127;
+#X msg 557 621 \$1 2000;
+#X obj 559 652 line;
+#X obj 565 688 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6858 1;
 #X connect 2 0 3 0;
 #X connect 2 0 3 1;
 #X connect 2 0 53 0;
@@ -181,3 +191,13 @@ of providing a steady pulse it can provide an irregular beat;
 #X connect 64 0 72 0;
 #X connect 67 0 3 0;
 #X connect 68 0 3 1;
+#X connect 74 0 75 0;
+#X connect 75 0 76 0;
+#X connect 76 0 77 0;
+#X connect 76 0 78 0;
+#X connect 77 0 76 1;
+#X connect 78 0 79 0;
+#X connect 79 0 80 0;
+#X connect 80 0 81 0;
+#X connect 81 0 3 1;
+#X connect 81 0 3 0;
